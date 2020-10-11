@@ -2,4 +2,14 @@
 
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="cidcdFlow" doc:id="fb1bf187-14fb-4b1d-b25b-2ddb1944d333" >
+		<scheduler doc:name="Scheduler" doc:id="07704880-a49e-4168-b911-99205bcd8d6a" >
+			<scheduling-strategy >
+				<fixed-frequency />
+			</scheduling-strategy>
+		</scheduler>
+		<set-payload value="success" doc:name="Set Payload" doc:id="547ffe1b-74c3-4b04-8331-b3d0f78d8330" mimeType="application/json"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2c7622a5-6afd-4bd4-8216-d3bb396af888" message="#[payload]"/>
+	</flow>
+</mule>
